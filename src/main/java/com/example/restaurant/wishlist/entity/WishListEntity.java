@@ -1,4 +1,4 @@
-package com.example.restaurant.repository.wishlist.entity;
+package com.example.restaurant.wishlist.entity;
 
 
 import com.example.restaurant.repository.MemoryDbEntity;
