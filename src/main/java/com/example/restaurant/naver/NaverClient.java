@@ -2,6 +2,7 @@ package com.example.restaurant.naver;
 
 
 import com.example.restaurant.naver.dto.SearchImageReq;
+import com.example.restaurant.naver.dto.SearchImageRes;
 import com.example.restaurant.naver.dto.SearchLocalReq;
 import com.example.restaurant.naver.dto.SearchLocalRes;
 import org.springframework.beans.factory.annotation.Value;
@@ -54,7 +55,7 @@ public class NaverClient {
         return responseEntity.getBody();
     }
 
-    public SearchLocalRes searchImage(SearchImageReq searchImageReq){
+    public SearchImageRes searchImage(SearchImageReq searchImageReq){
         URI uri = UriComponentsBuilder.fromUriString(naverImageSearchUrl)
                 .queryParams(searchImageReq.toMultiValueMap())
                 .build()
@@ -67,9 +68,9 @@ public class NaverClient {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         HttpEntity<Object> httpEntity = new HttpEntity<>(headers);
-        ParameterizedTypeReference<SearchLocalRes> responseType = new ParameterizedTypeReference<>(){};
+        ParameterizedTypeReference<SearchImageRes> responseType = new ParameterizedTypeReference<>(){};
 
-        ResponseEntity<SearchLocalRes> responseEntity = new RestTemplate().exchange(
+        ResponseEntity<SearchImageRes> responseEntity = new RestTemplate().exchange(
                 uri,
                 HttpMethod.GET,
                 httpEntity,

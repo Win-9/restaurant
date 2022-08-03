@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SearchImageRes {
     private String lastBuildDate;
-    private String total;
+    private int total;
     private String start;
     private String display;
     private List<SearchImageItem> items;
@@ -21,7 +21,7 @@ public class SearchImageRes {
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    static class SearchImageItem{
+    public static class SearchImageItem{
         private String title;
         private String link;
         private String thumbnail;

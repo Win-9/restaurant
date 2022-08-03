@@ -12,19 +12,19 @@ import java.util.List;
 @AllArgsConstructor
 public class SearchLocalRes {
     private String lastBuildDate;
-    private String total;
+    private int total;
     private String start;
     private String display;
-    private String category;
     private List<SearchLocalItem> items;
 
 
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    static class SearchLocalItem{
+    public static class SearchLocalItem{
         private String title;
         private String link;
+        private String category;
         private String description;
         private String telephone;
         private String address;
