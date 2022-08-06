@@ -1,7 +1,6 @@
 package com.example.restaurant.wishlist.dto;
 
 
-import com.example.restaurant.repository.MemoryDbEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,11 +11,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Data
 public class WishListDto{
-    private int index;
+    private Integer index;
     private String title;
     private String category;
     private String address;
-    private String readAddress;
+    private String roadAddress;
     private String homePageLink;
     private String imageLink;
     private boolean isVisit;
