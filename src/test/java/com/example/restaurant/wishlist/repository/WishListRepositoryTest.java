@@ -20,7 +20,7 @@ public class WishListRepositoryTest {
         wishListEntity.setTitle("title");
         wishListEntity.setCategory("category");
         wishListEntity.setAddress("address");
-        wishListEntity.setReadAddress("readAddress");
+        wishListEntity.setRoadAddress("readAddress");
         wishListEntity.setHomePageLink("");
         wishListEntity.setImageLink("");
         wishListEntity.setVisit(false);
