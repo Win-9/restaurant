@@ -49,7 +49,7 @@ public class WishListRepositoryTest {
         WishListEntity reSavedEntity = wishListRepository.save(savedEntity);
 
         Assertions.assertEquals("update test", reSavedEntity.getTitle());
-        Assertions.assertEquals(1, wishListRepository.listAll().size());
+        Assertions.assertEquals(1, wishListRepository.findAll().size());
 
     }
 
@@ -71,7 +71,7 @@ public class WishListRepositoryTest {
 
         wishListRepository.deleteById(1);
 
-        int size = wishListRepository.listAll().size();
+        int size = wishListRepository.findAll().size();
         Assertions.assertEquals(0, size);
 
     }
@@ -84,7 +84,7 @@ public class WishListRepositoryTest {
         WishListEntity wishListEntity2 = create();
         wishListRepository.save(wishListEntity2);
 
-        int size = wishListRepository.listAll().size();
+        int size = wishListRepository.findAll().size();
         Assertions.assertEquals(2, size);
     }
 }

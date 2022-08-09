@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -100,6 +101,21 @@ public class WishListService {
     }
 
     public List<WishListDto> findAll() {
-        return wishListRepository.listAll().stream().map(it -> entityToDto(it)).collect(Collectors.toList());
+        return wishListRepository.findAll().stream().map(it -> entityToDto(it)).collect(Collectors.toList());
+    }
+
+    public void delete(int index) {
+        wishListRepository.deleteById(index);
+    }
+
+    public void addVisit(int index) {
+        Optional<WishListEntity> wishItem = wishListRepository.findById(index);
+
+        if (wishItem.isPresent()) {
+            WishListEntity item = wishItem.get();
+
+            item.setVisit(true);
+            item.setVisitCount(item.getVisitCount() + 1);
+        }
     }
 }
